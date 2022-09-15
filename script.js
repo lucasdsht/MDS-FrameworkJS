@@ -38,3 +38,11 @@ let liste = [
 if (liste.length >= 3) {
     document.write(`bravo tu as ${liste.length} amis`)
 }
+
+//demander un nombre a l'utilisateur, si il repond plus de 50 afficher waouh c beaucoup sinon afficher seulement
+let input =  prompt('enter a number')
+if (input > 50) {
+    document.write('waouh c bcp')
+} else {
+    document.write('seulement')
+}
