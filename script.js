@@ -46,3 +46,35 @@ if (input > 50) {
 } else {
     document.write('seulement')
 }
+
+
+// reprendre le tableau liste avec 4 types de boucles
+// pour chaque prénom, on affiche Bonjour + prenom
+
+/**
+ * while
+ * for
+ * do...while
+ * for...of
+ */
+let i = 0
+
+
+while (i < liste.length) {
+    document.write(`<p>Bonjour, ${liste[i]}</p>`)
+    i++
+}
+
+for (i; i < liste.length; i++) {
+    document.write(`<p>Bonjour, ${liste[i]}</p>`)
+    
+}
+
+do {
+    document.write(`<p>Bonjour, ${liste[i]}</p>`)
+    i++
+} while (i < liste.length);
+
+for (const i of liste) {
+    document.write(`<p>Bonjour, ${i}</p>`)
+}
