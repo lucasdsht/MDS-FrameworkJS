@@ -1,80 +1,34 @@
-/** Commentaire 
- * sur plusieurs
- * lignes 
- */
+// Récupération des éléments du DOM 
+const passwordInput = document.getElementById('passwordInput');
+const passwordButton = document.getElementById('passwordButton');
+const eyeIcon = document.getElementById('icon');
+const eyeIconSlash = document.getElementById('icon-slash');
 
-let number = 12;
-let firstname = "coucou";
+// Initialisation de l'évenement au click du bouton
+passwordButton.addEventListener('click', () => {
 
-const coucou = 1
-
-const bool = false
-
-// demander son prenom a l'utilisateur & afficher sur la page
-let text = prompt('votre prenom ?')
-
-document.write(`tu t'apelle ${text}`)
-
-// Créer un tableau qui contient 5 prenom
-const nameTable = [
-    'Lucas',
-    'Maxence',
-    'Rémi',
-    'Alix',
-    'Loïc',
-]
-
-//comment ecrire une condition
-// si le tableu list contient au  moins 3 elements alors on va afficher 1 message sur la page '{bravo tu as nb de case} amis'
-
-let liste = [
-    'Lucas',
-    'Maxence',
-    'Rémi',
-    'Alix',
-    'Loïc',
-]
-
-if (liste.length >= 3) {
-    document.write(`bravo tu as ${liste.length} amis`)
-}
-
-//demander un nombre a l'utilisateur, si il repond plus de 50 afficher waouh c beaucoup sinon afficher seulement
-let input =  prompt('enter a number')
-if (input > 50) {
-    document.write('waouh c bcp')
-} else {
-    document.write('seulement')
-}
-
-
-// reprendre le tableau liste avec 4 types de boucles
-// pour chaque prénom, on affiche Bonjour + prenom
-
-/**
- * while
- * for
- * do...while
- * for...of
- */
-let i = 0
-
-
-while (i < liste.length) {
-    document.write(`<p>Bonjour, ${liste[i]}</p>`)
-    i++
-}
-
-for (i; i < liste.length; i++) {
-    document.write(`<p>Bonjour, ${liste[i]}</p>`)
+    //! ternaire pour definir le type d'input a changer (liberté prise pour plus de simplicité)
+    const type = passwordInput.getAttribute('type') === "password" ? "text" : "password"
     
-}
+    // changement du type
+    passwordInput.setAttribute('type', type)
 
-do {
-    document.write(`<p>Bonjour, ${liste[i]}</p>`)
-    i++
-} while (i < liste.length);
-
-for (const i of liste) {
-    document.write(`<p>Bonjour, ${i}</p>`)
-}
+    // condition pour l'affichage des icones
+    if (passwordInput.getAttribute('type') === "password") {
+        eyeIconSlash.classList.add('hidden')        
+        eyeIcon.classList.remove('hidden')
+    } else {
+        eyeIconSlash.classList.remove('hidden')        
+        eyeIcon.classList.add('hidden')
+    }
+    
+    // lancement du timer si l'input est de type "text"
+    if (passwordInput.getAttribute('type') === 'text') {
+        setTimeout(() => {
+            passwordInput.setAttribute('type', "password")
+            eyeIconSlash.classList.add('hidden')        
+            eyeIcon.classList.remove('hidden')
+        }, 5000);
+    }
+    
+});
