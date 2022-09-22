@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+            <form action="#" method="post">
+                <label for="firstname">Nom</label>
+                <input type="text" name="firstname" v-model="firstname">
+                
+                <label for="lastname">Prénom</label>
+                <input type="text" name="lastname" v-model="lastname">
+                
+                <label for="email">Mail</label>
+                <input type="email" name="email" v-model="email">
+                
+                <label for="phone">Telephone</label>
+                <input type="tel" name="phone" v-model="phoneNumber">
+                
+                <label for="password">Mot de passe</label>
+                <input type="password" name="password" v-model="password">
+                <button type="submit">Envoyer</button>
+            </form>
+
+            <div class="formDate">
+                <p>Nom: {{firstname}}</p>
+                <p>Prénom: {{lastname}}</p>
+                <p>Email: {{email}}</p>
+                <p>Téléphone: {{phoneNumber}}</p>
+                <p>Mot de passe: {{password}}</p>
+            </div>
+    </div>
+
+    <script type="module" src="index.js"></script>
+</body>
+</html>
