@@ -6,9 +6,9 @@ section {
 
 article {
     display: flex;
+    justify-content: space-between;
     flex-direction: row;
-    border: 1px solid cyan;
-    border-radius: 25px;
+    border: 1px solid blue;
 }
 
 article .text {
@@ -19,7 +19,6 @@ article .text {
 article .artImg {
     width: 50%;
     aspect-ratio: 1;
-    border-radius: 25px;
     margin: 1em;
 }
 
