@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+        <h1>Liste des concerts</h1>
+        <ul v-for="(item, index) in concerts">
+            <li>{{item.name}}, {{item.author}}</li>
+        </ul>
+
+        <h2>Détail des concert</h2>
+        <section>
+            <article v-for="(item, index) in concerts">
+                <div class="text">
+                    <h3>{{item.name}}, {{item.author}}</h3>
+                    <p v-text="item.date"></p>
+                    <p v-text="item.place"></p>
+                    <p v-text="item.imgName"></p>
+                </div>
+                <div class="artImg">
+                    <img :src="item.imgSrc">
+                </div>
+            </article>
+        </section>
+    </div>
+
+    <img src="" alt="">
+
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>

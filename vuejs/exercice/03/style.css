@@ -1,0 +1,29 @@
+section {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+article {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid cyan;
+    border-radius: 25px;
+}
+
+article .text {
+    flex-direction: column;
+    padding: 10px;
+}
+
+article .artImg {
+    width: 50%;
+    aspect-ratio: 1;
+    border-radius: 25px;
+    margin: 1em;
+}
+
+article img {
+    width: 100%;
+    height: auto;
+}
