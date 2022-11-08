@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+<div id="app">
+    <table>
+        <thead>
+        <tr>
+            <th>Numéro de facture</th>
+            <th>Montant total</th>
+            <th>Montant reçu</th>
+            <th>Validé ?</th>
+            <th>Ecart</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr  v-for="item in recipesData">
+                <td>{{item.id}}</td>
+                <td>{{item.totalPrice}}</td>
+                <td>{{item.receivedPrice}}</td>
+                <td v-if="item.totalPrice == item.receivedPrice" class="success">OK</td>
+                <td v-else class="error">ERROR</td>
+                <td v-if="item.totalPrice - item.receivedPrice === 0"> / </td>
+                <td v-else>{{item.receivedPrice - item.totalPrice}} €</td>
+                <td>
+                    <a href="#" v-on:click="setPrices(item)">Valider</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script type="module" src="index.js"></script>
+</body>
+
+</html>

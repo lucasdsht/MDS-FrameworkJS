@@ -1,0 +1,28 @@
+:root {
+    --orange-soda: #f06543ff;
+    --platinum: #e8e9ebff;
+    --alabaster: #e0dfd5ff;
+    --onyx: #313638ff;
+    --sandy-brown: #f09d51ff;
+    --success: #70c1b3;
+    --error: #f25f5c;
+}
+
+.success {
+    background-color: var(--success);
+}
+
+.error {
+    background-color: var(--error);
+}
+thead {
+    background-color: var(--onyx);
+}
+
+td {
+    padding: 10px 5px;
+}
+
+tbody:nth-child(2) {
+    background-color: var(--platinum);
+}
