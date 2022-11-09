@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang=fr>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+  <!--Créer une div avec l'id "app" pour la liée avec le JS-->
+  <div id="app">
+      <add-contact :contactdata="contacts" v-on:savedata="save"></add-contact>
+    <show-contact :contactdata="contacts" v-on:savedata="save"></show-contact
+  </div>
+
+
+  <!--Liée l'html et le JS avec la balise script-->
+  <!-- /!\ Ajouter le type="module" sinon le code ne va pas fonctionner-->
+  <script src="script.js" type="module"></script>
+</body>
+</html>

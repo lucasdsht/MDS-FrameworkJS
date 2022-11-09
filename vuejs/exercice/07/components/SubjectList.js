@@ -46,7 +46,6 @@ export default Vue.component('SubjectList', {
                     date: '2021-06-23',
                     text: "lorem ipsum dolor sit amet constectetur adjalin elit."
                 },
-
             ]
         }
     },

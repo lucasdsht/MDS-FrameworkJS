@@ -1,6 +1,5 @@
 export default Vue.component('ContactForm', {
     template: `
-        <div>
             <form action="">
                 <label for="pseudoInput">Pseudo</label>
                 <input v-model="pseudo" type="text" name="pseudo" id="pseudoInput" placeholder="pseudo">
@@ -12,13 +11,9 @@ export default Vue.component('ContactForm', {
                 <textarea v-model="message" name="message" id="messageInput" cols="30" rows="10" placeholder="De quoi traite le sujet ?"></textarea>
                 <button type="submit">Envoyer</button>
             </form>
-        </div>
-    `,
-    data() {
+    `, data() {
         return {
-            pseudo: "",
-            subject: "",
-            message: ""
+            pseudo: "", subject: "", message: ""
         }
     },
 })
