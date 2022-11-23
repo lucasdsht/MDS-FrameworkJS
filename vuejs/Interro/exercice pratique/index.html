@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+    <table>
+        <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Autheur</th>
+            <th>Emprunté</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr  v-for="item in library" :style="item.borrowed == true ? 'background-color: orange' : ''" >
+            <td>{{item.title}}</td>
+            <td>{{item.author}}</td>
+            <td v-if="item.borrowed == true" >Oui</td>
+            <td v-else class="error">Non</td>
+            <td v-if="item.borrowed == true">
+                <button v-on:click="getBook(item)">Valider</button>
+            </td>
+            <td v-else>Livre rendu</td>
+            <td>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script type="module" src="sscript.js"></script>
+</body>
+</html>
